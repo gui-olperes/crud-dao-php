@@ -1,4 +1,4 @@
-# crud-dao-php
+# C.R.U.D feito em PHP utilizando InterfaceDao e PDO.
 
 ## Integrantes:
 - Guilherme Oliveira Peres
