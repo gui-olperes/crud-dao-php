@@ -46,14 +46,17 @@ if (isset($_POST['update'])) {
     $telefone = $_POST['telefone'];
     $contato = new Contato($nome, $email, $telefone);
     $contato->setId($id);
-
+    // verifica se todos os campos foram preenchidos
+    if(empty($nome) || empty($email) || empty($telefone)) {
+        echo "Por favor, preencha todos os campos.";
+    } else {
     try {
         $daoContato->update($contato);
     } catch (Exception $e) {
         echo "Erro ao atualizar o contato: " . $e->getMessage();
     }
 }
-
+ }
 // Lista os registros para serem exibidos na tabela
 $contatos = $daoContato->listarContatos();
 ?>
